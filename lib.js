@@ -14,7 +14,7 @@ function pokerTest(string) {
 }
 
 function longRunsTest(string) {
-    let prev, count = 0;
+    let prev, count = 1;
     for (let c of string) {
         if (c === prev) {
             count += 1;
@@ -22,7 +22,7 @@ function longRunsTest(string) {
                 return false;
             }
         } else {
-            count = 0;
+            count = 1;
             prev = c;
         }
     }
