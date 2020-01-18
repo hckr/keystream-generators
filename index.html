@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Keystream generators demo</title>
+</head>
+<body>
+    <h1>Demonstration of selected keystream generators based on LSTRs (linear feedback shift registers)</h1>
+    <table id="lsfr-table">
+        <thead>
+            <tr>
+                <th scope="col" class="col-name">Name</th>
+                <th scope="col" class="col-length">Register length</th>
+                <th scope="col" class="col-function">Function</th>
+                <th scope="col" class="col-contents">Contents</th>
+                <th scope="col" class="col-generate">Generate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- added from JS -->
+        </tbody>
+    </table>
+
+    <fieldset>
+        <legend>Generate key</legend>
+        <label>Key length: <input id="key-length" value="20000"></label>
+        <button id="geffe-generator">Geffe generator<br><sub>(LSFR 1 & 2 & 3)</sub></button>
+        <button id="stop-and-go-generator">Stop-and-Go generator<br><sub>(LSFR 1 & 2 & 3)</sub></button>
+        <button id="shrinking-generator">Shrinking generator<br><sub>(LSFR 1 & 2)</sub></button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Test key (FIPS PUB 140-2)</legend>
+        <button id="mono-bit-test">The mono bit test</button>
+        <button id="poker-test">The poker test</button>
+        <button id="long-runs-test">The long runs test</button>
+    </fieldset>
+
+    <label class="separate-field">Generated key:
+        <textarea id="key-result"></textarea>
+    </label>
+
+    <div class="footer">
+        Created by <a href="https://hckr.pl">Jakub Młokosiewicz</a>.
+        See the <a href="https://gitub.com/hckr/keystream-generators">source code on GitHub</a>.
+    </div>
+
+    <script src="lib.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

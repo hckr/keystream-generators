@@ -1,0 +1,104 @@
+html {
+    font: 16px sans-serif;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid #3c6aff;
+}
+
+thead tr, tr:not(:last-child) {
+    border-bottom: 1px solid #3c6aff;
+}
+
+.col-name {
+    width: 80px;
+}
+
+.col-length {
+    width: 50px;
+}
+
+table button {
+    padding: 5px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    text-align: center;
+}
+
+input {
+    font: 16px monospace;
+}
+
+.taps {
+    font-size: 18px;
+}
+
+.taps input[type=number] {
+    width: 30px;
+    text-align: center;
+}
+
+.taps input[type=checkbox] {
+    display: none;
+}
+
+.taps input + span {
+    opacity: 0.5;
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+.taps input:checked + span {
+    opacity: 1;
+    text-decoration: none;
+}
+
+#key-result {
+    width: 800px;
+    height: 300px;
+}
+
+label textarea {
+    display: block;
+}
+
+.separate-field {
+    display: block;
+    padding: 20px 0;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px 20px;
+}
+
+fieldset {
+    border: 1px solid #3c6aff;
+    padding: 0 20px;
+    margin: 20px 0;
+    max-width: 700px;
+}
+
+fieldset label {
+    display: block;
+    padding: 20px 0;
+}
+
+fieldset button {
+    margin: 20px;
+}
+
+.footer {
+    padding: 20px;
+}
+
+a {
+    color: #33a;
+}
