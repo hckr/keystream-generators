@@ -20,6 +20,10 @@ thead tr, tr:not(:last-child) {
     width: 50px;
 }
 
+.terms-count {
+    width: 50px;
+}
+
 table button {
     padding: 5px;
 }

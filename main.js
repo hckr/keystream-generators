@@ -69,6 +69,7 @@ function createLfsrRow(name, termsCount) {
 
     const tapsCountTd = document.createElement('td');
     const termsCountInput = document.createElement('input');
+    termsCountInput.className = 'terms-count';
     termsCountInput.type = 'number';
     termsCountInput.min = 1;
     termsCountInput.max = 25;
