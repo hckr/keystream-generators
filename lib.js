@@ -31,60 +31,60 @@ function longRunsTest(string) {
 
 //
 
-function geffe([lsfm1, lsfm2, lsfm3], length) {
+function geffe([lfsr1, lfsr2, lfsr3], length) {
     const result = [];
 
     for (let i = 0; i < length; ++i) {
-        const x1 = currentValue(lsfm1);
-        const x2 = currentValue(lsfm2);
-        const x3 = currentValue(lsfm3);
+        const x1 = currentValue(lfsr1);
+        const x2 = currentValue(lfsr2);
+        const x3 = currentValue(lfsr3);
 
         result.push((x1 & x2) ^ (!x2 & x3));
 
-        lsfm1 = shiftLsfm(lsfm1);
-        lsfm2 = shiftLsfm(lsfm2);
-        lsfm3 = shiftLsfm(lsfm3);
+        lfsr1 = shiftLfsr(lfsr1);
+        lfsr2 = shiftLfsr(lfsr2);
+        lfsr3 = shiftLfsr(lfsr3);
     }
 
     return result.join('');
 }
 
-function stopAndGo([lsfm1, lsfm2, lsfm3], length) {
+function stopAndGo([lfsr1, lfsr2, lfsr3], length) {
     const result = [];
 
     for (let i = 0; i < length; ++i) {
-        const x1 = currentValue(lsfm1);
-        const x2 = currentValue(lsfm2);
-        const x3 = currentValue(lsfm3);
+        const x1 = currentValue(lfsr1);
+        const x2 = currentValue(lfsr2);
+        const x3 = currentValue(lfsr3);
 
         result.push(x2 ^ x3);
 
-        lsfm1 = shiftLsfm(lsfm1);
+        lfsr1 = shiftLfsr(lfsr1);
         if (x1) {
-            lsfm2 = shiftLsfm(lsfm2);
+            lfsr2 = shiftLfsr(lfsr2);
         }
         if (!x1) {
-            lsfm3 = shiftLsfm(lsfm3);
+            lfsr3 = shiftLfsr(lfsr3);
         }
     }
 
     return result.join('');
 }
 
-function shrinking([lsfm1, lsfm2], length) {
+function shrinking([lfsr1, lfsr2], length) {
     const result = [];
 
     for (let i = 0; i < length;) {
-        const x1 = currentValue(lsfm1);
-        const x2 = currentValue(lsfm2);
+        const x1 = currentValue(lfsr1);
+        const x2 = currentValue(lfsr2);
 
         if (x1) {
             result.push(x2);
             ++i;
         }
 
-        lsfm1 = shiftLsfm(lsfm1);
-        lsfm2 = shiftLsfm(lsfm2);
+        lfsr1 = shiftLfsr(lfsr1);
+        lfsr2 = shiftLfsr(lfsr2);
     }
 
     return result.join('');
@@ -92,7 +92,7 @@ function shrinking([lsfm1, lsfm2], length) {
 
 //
 
-function shiftLsfm({ constantTerm, taps, contents }) {
+function shiftLfsr({ constantTerm, taps, contents }) {
     let newValue = taps.reduce(
         (acc, tapIndex) => acc ^ contents[tapIndex],
         constantTerm

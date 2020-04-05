@@ -1,13 +1,13 @@
-const lsfrsBody = document.querySelector('#lsfr-table tbody');
+const lfsrsBody = document.querySelector('#lfsr-table tbody');
 
-const [tr1, generateNext1, getData1] = createLfsrRow('LSFR 1', 13);
-lsfrsBody.appendChild(tr1);
+const [tr1, generateNext1, getData1] = createLfsrRow('LFSR 1', 13);
+lfsrsBody.appendChild(tr1);
 
-const [tr2, generateNext2, getData2] = createLfsrRow('LSFR 2', 17);
-lsfrsBody.appendChild(tr2);
+const [tr2, generateNext2, getData2] = createLfsrRow('LFSR 2', 17);
+lfsrsBody.appendChild(tr2);
 
-const [tr3, generateNext3, getData3] = createLfsrRow('LSFR 3', 19);
-lsfrsBody.appendChild(tr3);
+const [tr3, generateNext3, getData3] = createLfsrRow('LFSR 3', 19);
+lfsrsBody.appendChild(tr3);
 
 //
 
@@ -113,9 +113,7 @@ function createLfsrRow(name, termsCount) {
     function generateNext() {
         const data = getData();
         const result = currentValue(data);
-        contentsInput.value = shiftLsfm(data).contents;
-
-        console.log(result);
+        contentsInput.value = shiftLfsr(data).contents;
         return result;
     }
 
